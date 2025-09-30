@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <title>Pesan Sekarang - Burger Si Opan</title>
+    <link rel="stylesheet" href="pesan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="order-box">
+        <header>
+            <h2><i class="fas fa-hamburger"></i> Pesan Sekarang</h2>
+            <p>Isi form di bawah untuk memesan menu favoritmu!</p>
+        </header>
+
+        <form id="order-form">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="wa">Nomor WhatsApp:</label>
+            <input type="tel" id="wa" name="wa" placeholder="contoh: 6281234567890" required>
+
+            <!-- Container menu dinamis -->
+            <div id="menu-container">
+                <div class="menu-item">
+                    <label>Pilih Menu:</label>
+                    <select name="menu[]" required>
+                        <option value="">-- Pilih --</option>
+                        <option>Burger Reguler</option>
+                        <option>Burger Double</option>
+                        <option>French Fries</option>
+                        <option>Cola</option>
+                    </select>
+
+                    <label>Jumlah:</label>
+                    <input type="number" name="jumlah[]" min="1" value="1" required>
+
+                    <button type="button" class="remove-menu">Hapus</button>
+                </div>
+            </div>
+
+            <!-- Tombol tambah menu -->
+            <button type="button" id="add-menu" class="secondary-btn">
+                + Tambah Menu
+            </button>
+
+            <label for="catatan">Catatan:</label>
+            <textarea id="catatan" name="catatan" placeholder="Tanpa sambal, extra keju, dll."></textarea>
+
+            <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Kirim Pesanan via WhatsApp</button>
+
+            <!-- Tombol kembali ke halaman menu -->
+            <a href="tugas_1new.html" class="back-btn">Kembali ke Menu</a>
+        </form>
+
+        <footer>
+            <p>&copy; 2025 Burger Si Opan</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tambah menu baru
+        document.getElementById("add-menu").addEventListener("click", function(){
+            let container = document.getElementById("menu-container");
+            let newItem = document.createElement("div");
+            newItem.classList.add("menu-item");
+            newItem.innerHTML = `
+                <label>Pilih Menu:</label>
+                <select name="menu[]" required>
+                    <option value="">-- Pilih --</option>
+                    <option>Burger Reguler</option>
+                    <option>Burger Double</option>
+                    <option>French Fries</option>
+                    <option>Cola</option>
+                </select>
+
+                <label>Jumlah:</label>
+                <input type="number" name="jumlah[]" min="1" value="1" required>
+
+                <button type="button" class="remove-menu">Hapus</button>
+            `;
+            container.appendChild(newItem);
+        });
+
+        // Hapus menu
+        document.addEventListener("click", function(e){
+            if(e.target && e.target.classList.contains("remove-menu")){
+                e.target.parentElement.remove();
+            }
+        });
+
+        // Kirim pesanan
+        document.getElementById("order-form").addEventListener("submit", function(e){
+            e.preventDefault();
+            let nama = document.getElementById("nama").value;
+            let wa = document.getElementById("wa").value;
+            let catatan = document.getElementById("catatan").value;
+
+            let menus = document.querySelectorAll("select[name='menu[]']");
+            let jumlahs = document.querySelectorAll("input[name='jumlah[]']");
+            let listPesanan = "";
+
+            for(let i=0; i<menus.length; i++){
+                if(menus[i].value){
+                    listPesanan += `- ${menus[i].value} x${jumlahs[i].value}\n`;
+                }
+            }
+
+            let pesan = `Halo, saya ${nama}. Saya ingin pesan:\n${listPesanan}\nCatatan: ${catatan}`;
+            let url = `https://wa.me/${wa}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, "_blank");
+        });
+    </script>
+</body>
+</html>

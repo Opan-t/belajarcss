@@ -1,0 +1,155 @@
+/* Gaya umum */
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+#box{
+width: 1000px;
+height: auto;
+margin: auto;
+}
+#header{
+background-color: darkred;
+padding: 20px;
+}
+
+/* Judul */
+h3 {
+    color: #ffd700;
+    margin-top: 20px;
+}
+
+/* Judul */
+caption {
+    color: darkred;
+    margin-top: 20px;
+}
+
+/* Tabel */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table, th, td {
+    border: 2px solid darkred;
+    padding: 10px;
+    color: darkred;
+}
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    background: #333;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Efek hover pada gambar */
+table img {
+    border-radius: 12px;       /* sudut membulat */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+table img:hover {
+    transform: scale(1.1);     /* membesar sedikit */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Warna baris tabel selang-seling */
+table tr:nth-child(even) {
+    background-color: #fff5f5; /* merah muda sangat lembut */
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Agar hover di baris juga interaktif */
+table tr:hover {
+    background-color: #ffe0e0;
+    transition: background-color 0.3s ease;
+}
+/* Animasi fade-in untuk tabel */
+table {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tombol Pesan Sekarang */
+.order-btn {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.order-btn button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-btn button:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+/* Background gradasi */
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: linear-gradient(135deg, #ffcc00, #ff6666);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Box utama */
+#box {
+    width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Styling tabel seperti card */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Caption lebih menonjol */
+caption {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+    color: darkred;
+}
