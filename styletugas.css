@@ -1,0 +1,58 @@
+/* Gaya umum */
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+#box{
+width: 1000px;
+height: auto;
+margin: auto;
+}
+#header{
+background-color: darkred;
+padding: 20px;
+}
+
+/* Judul */
+h3 {
+    color: white;
+    margin-top: 20px;
+}
+
+/* Judul */
+caption {
+    color: darkred;
+    margin-top: 20px;
+}
+
+/* Tabel */
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+table, th, td {
+    border: 2px solid darkred;
+    padding: 10px;
+    color: darkred;
+}
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    background: #333;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
